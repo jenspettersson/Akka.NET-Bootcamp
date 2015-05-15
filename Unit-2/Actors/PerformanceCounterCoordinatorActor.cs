@@ -67,7 +67,7 @@ namespace ChartApp.Actors
 
             Receive<Watch>(watch =>
             {
-                if (_counterActors.ContainsKey(watch.Counter))
+                if (!_counterActors.ContainsKey(watch.Counter))
                 {
                     var counterActor = Context.ActorOf(Props.Create(() => new PerformanceCounterActor(watch.Counter.ToString(), CounterGenerators[watch.Counter])));
 

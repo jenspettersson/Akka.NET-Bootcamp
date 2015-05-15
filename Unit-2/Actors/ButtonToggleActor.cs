@@ -28,7 +28,7 @@ namespace ChartApp.Actors
 
                 FlipToggle();
             }
-            else if (message is Toggle && _isToggledOn)
+            else if (message is Toggle && !_isToggledOn)
             {
                 _coordinatorActor.Tell(new PerformanceCounterCoordinatorActor.Watch(_myCounterType));
 
